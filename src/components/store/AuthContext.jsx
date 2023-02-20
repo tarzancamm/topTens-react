@@ -97,10 +97,10 @@ export const AuthContextProvider = (props) => {
   };
 
   return (
-    <AuthContext.Provider value={contextValue}>
+    <AuthInitialContext.Provider value={contextValue}>
       {props.children}
-    </AuthContext.Provider>
+    </AuthInitialContext.Provider>
   );
 };
 
-export default AuthContext;
+export default AuthInitialContext;
