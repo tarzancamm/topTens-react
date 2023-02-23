@@ -2,7 +2,10 @@ import React from 'react'
 
 const HomeScreen = () => {
   return (
-    <div>HomeScreen</div>
+    <div>
+      <h3>homescreen</h3>
+      <a href="/auth">Login</a>
+    </div>
   )
 }
 

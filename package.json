@@ -1,6 +1,7 @@
 {
   "name": "toptens-react",
   "version": "0.1.0",
+  "proxy": "http://localhost:4999",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",

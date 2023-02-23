@@ -4,21 +4,27 @@ const express = require("express");
 const cors = require("cors");
 const { PORT } = process.env || 4999;
 const { db } = require("./util/database");
+const {User, Movie} = require('./util/models')
+
 
 // Store express in variable
 const server = express();
 
 // Import middleware functions
+const {register, login} = require('./controllers/auth')
 
 // Middleware
-server.use(express.json()) // Parse all incoming requests into JSON
-server.use(cors()) // Client & Server can run on seperate ports
+server.use(express.json()); // Parse all incoming requests into JSON
+server.use(cors()); // Client & Server can run on seperate ports
 
 // Table associations (relations)
 
-// Endpoints
 
-// {force: true} to drop tables
+// Endpoints
+server.post('/register', register)
+server.post('/login', login)
+
+// {force: true} within sync() to drop tables
 db.sync().then(() => {
   server.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`);

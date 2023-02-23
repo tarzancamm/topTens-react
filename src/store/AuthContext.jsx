@@ -7,6 +7,8 @@ const AuthInitialContext = createContext({
   login: () => {},
   logout: () => {},
   userId: null,
+  firstName: "",
+  lastName: "",
 });
 
 // Finds remaining time till expiration of localStorage login data
@@ -55,11 +57,15 @@ export const AuthContextProvider = (props) => {
   //Set initial state to initial Local Data
   const [token, setToken] = useState(initialToken);
   const [userId, setUserId] = useState(initialId);
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
 
   //Login and logout functionality (sets or clears localStorage data)
   const logoutHandler = useCallback(() => {
     setToken(null);
     setUserId(null);
+    setFirstName('');
+    setLastName('');
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
     localStorage.removeItem("exp");
@@ -69,9 +75,11 @@ export const AuthContextProvider = (props) => {
     }
   }, []);
 
-  const loginHandler = (token, userId, exp) => {
+  const loginHandler = (token, userId, exp, firstName, lastName) => {
     setToken(token);
     setUserId(userId);
+    setFirstName(firstName);
+    setLastName(lastName)
     localStorage.setItem("token", token);
     localStorage.setItem("userId", userId);
     localStorage.setItem("exp", exp);
@@ -94,6 +102,8 @@ export const AuthContextProvider = (props) => {
     login: loginHandler,
     logout: logoutHandler,
     userId: userId,
+    firstName,
+    lastName,
   };
 
   return (

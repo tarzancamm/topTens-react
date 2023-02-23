@@ -6,12 +6,12 @@ module.exports = {
     id: {
       primaryKey: true,
       allowNull: false,
-      autoIncrememt: true,
+      autoIncrement: true,
       type: DataTypes.INTEGER,
     },
     email_address: {
       allowNull: false,
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
     },
     hashed_pass: {
       allowNull: false,
@@ -30,7 +30,7 @@ module.exports = {
     id: {
       primaryKey: true,
       allowNull: false,
-      autoIncrememt: true,
+      autoIncrement: true,
       type: DataTypes.INTEGER,
     },
     movie_id: {
