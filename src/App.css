@@ -53,3 +53,30 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+html {
+  overflow-x: hidden;
+}
+
+
+/* Auth Page */
+.auth-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('https://wallpaperbat.com/img/193826-wes-anderson-wallpaper.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Home page */
+.home-page {
+  background-image: url('https://thefilmstage.com/wp-content/uploads/2020/02/The-French-Dispatch-5.jpg');
+  background-repeat: repeat-y;
+  height: 2000px;
+  width: 100vw;
+  position: relative;
+  top: 4rem;
+}

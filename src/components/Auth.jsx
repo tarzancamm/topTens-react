@@ -30,7 +30,7 @@ const Auth = () => {
         })
         .catch((err) => {
             if (err.response) {
-                // Client given error response
+                // Client received error in response
                 console.log(err.response.data)
                 console.log(err.response.status)
                 console.log(err.response.headers)
@@ -50,7 +50,7 @@ const Auth = () => {
         })
         .catch((err) => {
             if (err.response) {
-                // Client given error response
+                // Client received error in response
                 console.log(err.response.data)
                 console.log(err.response.status)
                 console.log(err.response.headers)

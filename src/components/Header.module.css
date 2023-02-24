@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    height: 4rem;
+    width: 100vw;
+    color: #FAF0CA;
+    background-color: #393D3F;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 5;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.nav {
+    position: absolute;
+    width: 350px;
+    height: 100vh;
+    background-color:#393D3F90;
+    top: 0;
+    left: 0;
+}
