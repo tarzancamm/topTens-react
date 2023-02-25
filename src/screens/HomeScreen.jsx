@@ -33,6 +33,7 @@ const HomeScreen = () => {
       })
   }
 
+  // Page functions
   const nextPage = () => {
     setIncrement(increment + 1)
     dispatch(movieActions.page(increment))
