@@ -12,8 +12,12 @@ const movieSlice = createSlice({
     popular(state, action) {
         state.movies = action.payload
     },
-    topRated(state, action) {},
-    nowPlaying(state, action) {},
+    topRated(state, action) {
+        state.movies = action.payload
+    },
+    nowPlaying(state, action) {
+        state.movies = action.payload
+    },
     page(state, action) {
         state.page = action.payload
     },

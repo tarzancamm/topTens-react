@@ -1,0 +1,12 @@
+.movies {
+    position: relative;
+    top: 5%;
+    margin-left: 4%;
+    margin-right: 4%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}

@@ -1,0 +1,14 @@
+.movie-card {
+    width: 200px;
+    height: 370px;
+}
+
+.movie-card img {
+    width: 100%;
+}
+
+.movie-card h3 {
+    color: #000;
+    text-align: center;
+    margin-top: .8rem;
+}

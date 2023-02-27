@@ -7,7 +7,9 @@ const MovieList = () => {
     const movies = useSelector((state) => state.movie.movies)
 
     const movieDisplay = movies.map((movie) => {
-        <MovieCard poster={movie.poster_path}/>
+        return (
+        <MovieCard poster={movie.poster_path} title={movie.title} key={movie.id} />
+        )
     })
 
   return (

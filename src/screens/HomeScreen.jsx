@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useSelector, useDispatch} from 'react-redux'
 import { movieActions } from "../store/redux slices/movie";
 import Header from "../components/Header";
+import Footer from '../components/Footer'
 import MovieList from '../components/MovieList'
 import axios from 'axios'
 
@@ -54,12 +55,14 @@ const HomeScreen = () => {
     <div>
       <Header />
       <div className='home-page'>
-        <div>
-        <button onClick={page !== 1 && increment !== 1 ? prevPage : undefined}>Prev</button>
-        <button onClick={nextPage}>Next</button>
+        <h2>Most Popular</h2>
+        <div className='prevnext'>
+          <button onClick={page !== 1 && increment !== 1 ? prevPage : undefined}>Prev</button>
+          <button onClick={nextPage}>Next</button>
         </div>
         <MovieList />
       </div>
+      <Footer />
     </div>
   );
 };

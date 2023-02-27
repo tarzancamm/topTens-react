@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
 * {
   box-sizing: border-box;
@@ -28,7 +28,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -73,10 +73,37 @@ html {
 
 /* Home page */
 .home-page {
-  background-image: url('https://thefilmstage.com/wp-content/uploads/2020/02/The-French-Dispatch-5.jpg');
+  background-color: #F8F3E4;
   background-repeat: repeat-y;
   height: 2000px;
   width: 100vw;
   position: relative;
   top: 4rem;
+}
+
+.home-page h2 {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 3%;
+}
+
+.prevnext {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 8%;
+  top: 3%;
+}
+
+.prevnext button {
+  border: none;
+  border-bottom: 1px solid #ee3024;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.prevnext button:hover {
+  cursor: pointer;
+  opacity: 70%;
 }
