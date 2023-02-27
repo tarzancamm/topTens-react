@@ -107,3 +107,20 @@ html {
   cursor: pointer;
   opacity: 70%;
 }
+
+/* Top Rated Page */
+
+.top-page {
+  background-color: #F8F3E4;
+  background-repeat: repeat-y;
+  height: 2000px;
+  width: 100vw;
+  position: relative;
+  top: 4rem;
+}
+
+.top-page h2 {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 3%;
+}
