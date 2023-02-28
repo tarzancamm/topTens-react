@@ -57,7 +57,7 @@ const HomeScreen = () => {
         <MovieList />
         <div className='prevnext'>
           <button onClick={page !== 1 ? prevPage : undefined}>Prev</button>
-          <p>Page: {page}</p>
+          <p>{page}</p>
           <button onClick={nextPage}>Next</button>
         </div>
       </div>

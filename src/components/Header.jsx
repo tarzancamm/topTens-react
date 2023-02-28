@@ -1,10 +1,12 @@
 import React, { useContext, useState, Fragment } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./Header.module.css";
 import AuthInitialContext from "../store/AuthContext";
 import { IoMenu } from "react-icons/io5";
 import { IoArrowBack } from "react-icons/io5";
+import {CgGhostCharacter} from 'react-icons/cg'
+import topTenLogo from '../resources/topTenLogo.png'
 import { movieActions } from "../store/redux slices/movie";
 import axios from 'axios'
 
@@ -22,6 +24,10 @@ const Header = () => {
   
   const homepageHandler = () => {
     navigate('/')
+  }
+
+  const profileHandler = () => {
+    navigate('/profile')
   }
 
   const getTopRated = () => {
@@ -77,6 +83,7 @@ const Header = () => {
     <Fragment>
       <header className={styles.header}>
         <IoMenu className={styles.hamburger} size="30px" onClick={() => setShowMenu(!showMenu)} />
+        <img src={topTenLogo} alt="logo" />
       </header>
       {showMenu && (
         <nav className={styles.nav}>
@@ -87,9 +94,13 @@ const Header = () => {
             <button onClick={homepageHandler}>Most Popular</button>
             <button onClick={getTopRated}>Top Rated</button>
             <button onClick={getTrending}>Trending</button>
+            <NavLink to='/profile' className={styles.profilebtn}>
+                <CgGhostCharacter className={styles.ghost}/>
+                <button>Profile</button>
+            </NavLink>
           </div>
           <div className={styles.logout}>
-                <button onClick={logoutHandler}>Login / Logout</button>
+            <button onClick={logoutHandler}>Login / Logout</button>
           </div>
         </nav>
       )}

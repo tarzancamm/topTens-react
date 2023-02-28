@@ -92,7 +92,7 @@ html {
   display: flex;
   justify-content: space-between;
   margin: 0 8%;
-  top: 8%;
+  top: 7%;
 }
 
 .prevnext button {
@@ -106,6 +106,12 @@ html {
 .prevnext button:hover {
   cursor: pointer;
   opacity: 70%;
+}
+
+.prevnext p {
+  border: 1px solid #ee3024;
+  border-radius: 50%;
+  padding: 10px 15px;
 }
 
 
@@ -140,4 +146,15 @@ html {
   font-size: 3rem;
   text-align: center;
   padding-top: 5%;
+}
+
+
+/* Profile Page */
+.profile-page {
+  background-color: #F8F3E4;
+  background-repeat: repeat-y;
+  height: 2000px;
+  width: 100vw;
+  position: relative;
+  top: 4rem;
 }
