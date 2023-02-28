@@ -18,9 +18,12 @@ const movieSlice = createSlice({
     nowPlaying(state, action) {
         state.movies = action.payload
     },
-    page(state, action) {
-        state.page = action.payload
+    pageUp(state) {
+        state.page = state.page += 1
     },
+    pageDown(state) {
+        state.page = state.page -= 1
+    }
   },
 });
 

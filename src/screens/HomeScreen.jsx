@@ -8,7 +8,6 @@ import axios from 'axios'
 
 const HomeScreen = () => {
   const dispatch = useDispatch()
-  const [increment, setIncrement] = useState(1)
   const page = useSelector((state) => state.movie.page)
 
   const getPopular = () => {
@@ -36,13 +35,11 @@ const HomeScreen = () => {
 
   // Page functions
   const nextPage = () => {
-    setIncrement(increment + 1)
-    dispatch(movieActions.page(increment))
+    dispatch(movieActions.pageUp())
   }
 
   const prevPage = () => {
-    setIncrement(increment - 1)
-    dispatch(movieActions.page(increment))
+    dispatch(movieActions.pageDown())
   }
 
   useEffect(() => {
@@ -57,7 +54,7 @@ const HomeScreen = () => {
       <div className='home-page'>
         <h2>Most Popular</h2>
         <div className='prevnext'>
-          <button onClick={page !== 1 && increment !== 1 ? prevPage : undefined}>Prev</button>
+          <button onClick={page !== 1 ? prevPage : undefined}>Prev</button>
           <button onClick={nextPage}>Next</button>
         </div>
         <MovieList />

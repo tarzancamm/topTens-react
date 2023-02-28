@@ -19,6 +19,7 @@ const TopRatedScreen = () => {
         `https://api.themoviedb.org/3/movie/top_rated?api_key=ab914da83ff50db0baf3acd601780e5f&language=en-US&${page}`
       )
       .then((res) => {
+        console.log(res.data.results)
         dispatch(movieActions.topRated(res.data.results));
         navigate("/toprated");
       })
@@ -40,13 +41,11 @@ const TopRatedScreen = () => {
 
   // Page functions
   const nextPage = () => {
-    setIncrement(increment + 1);
-    dispatch(movieActions.page(increment));
+    dispatch(movieActions.pageUp());
   };
 
   const prevPage = () => {
-    setIncrement(increment - 1);
-    dispatch(movieActions.page(increment));
+    dispatch(movieActions.pageDown());
   };
 
   useEffect(() => {
@@ -60,7 +59,7 @@ const TopRatedScreen = () => {
       <div className='top-page'>
         <h2>Top Rated</h2>
         <div className='prevnext'>
-          <button onClick={page !== 1 && increment !== 1 ? prevPage : undefined}>Prev</button>
+          <button onClick={page !== 1 ? prevPage : undefined}>Prev</button>
           <button onClick={nextPage}>Next</button>
         </div>
         <MovieList />
