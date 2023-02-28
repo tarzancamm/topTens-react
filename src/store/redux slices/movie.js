@@ -15,7 +15,7 @@ const movieSlice = createSlice({
     topRated(state, action) {
         state.movies = action.payload
     },
-    nowPlaying(state, action) {
+    trending(state, action) {
         state.movies = action.payload
     },
     pageUp(state) {

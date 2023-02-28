@@ -92,7 +92,7 @@ html {
   display: flex;
   justify-content: space-between;
   margin: 0 8%;
-  top: 3%;
+  top: 8%;
 }
 
 .prevnext button {
@@ -108,8 +108,8 @@ html {
   opacity: 70%;
 }
 
-/* Top Rated Page */
 
+/* Top Rated Page */
 .top-page {
   background-color: #F8F3E4;
   background-repeat: repeat-y;
@@ -120,6 +120,23 @@ html {
 }
 
 .top-page h2 {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 5%;
+}
+
+
+/* Trending Page */
+.trending-page {
+    background-color: #F8F3E4;
+    background-repeat: repeat-y;
+    height: 2000px;
+    width: 100vw;
+    position: relative;
+    top: 4rem;
+}
+
+.trending-page h2 {
   font-size: 3rem;
   text-align: center;
   padding-top: 5%;

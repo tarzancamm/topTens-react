@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {useSelector, useDispatch} from 'react-redux'
 import { movieActions } from "../store/redux slices/movie";
 import Header from "../components/Header";
@@ -16,6 +16,7 @@ const HomeScreen = () => {
       .then((res) => {
         console.log(res.data.results)
         dispatch(movieActions.popular(res.data.results))
+        window.scrollTo(0, 0)
       })
       .catch((err) => {
         if (err.response) {
@@ -53,11 +54,12 @@ const HomeScreen = () => {
       <Header />
       <div className='home-page'>
         <h2>Most Popular</h2>
+        <MovieList />
         <div className='prevnext'>
           <button onClick={page !== 1 ? prevPage : undefined}>Prev</button>
+          <p>Page: {page}</p>
           <button onClick={nextPage}>Next</button>
         </div>
-        <MovieList />
       </div>
       <Footer />
     </div>

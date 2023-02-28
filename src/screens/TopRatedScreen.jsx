@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MovieList from '../components/MovieList'
@@ -9,8 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 const TopRatedScreen = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-  const [increment, setIncrement] = useState(1);
   const page = useSelector((state) => state.movie.page);
 
   const getTopRated = () => {
@@ -21,7 +19,7 @@ const TopRatedScreen = () => {
       .then((res) => {
         console.log(res.data.results)
         dispatch(movieActions.topRated(res.data.results));
-        navigate("/toprated");
+        window.scrollTo(0, 0)
       })
       .catch((err) => {
         if (err.response) {
@@ -51,18 +49,19 @@ const TopRatedScreen = () => {
   useEffect(() => {
     getTopRated();
     console.log(page);
-  }, [page]);
+  }, [page])
 
   return (
     <div>
       <Header />
       <div className='top-page'>
         <h2>Top Rated</h2>
+        <MovieList />
         <div className='prevnext'>
           <button onClick={page !== 1 ? prevPage : undefined}>Prev</button>
+          <p>{page}</p>
           <button onClick={nextPage}>Next</button>
         </div>
-        <MovieList />
       </div>
       <Footer />
     </div>

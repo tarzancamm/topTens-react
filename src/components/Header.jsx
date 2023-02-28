@@ -47,6 +47,32 @@ const Header = () => {
       })
   }
 
+  const getTrending = () => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/trending/movie/day?api_key=ab914da83ff50db0baf3acd601780e5f`
+      )
+      .then((res) => {
+        console.log(res.data.results);
+        dispatch(movieActions.trending(res.data.results));
+        navigate("/trending");
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log("Client received error in response");
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else if (err.request) {
+          console.log("Client never received response");
+          console.log(err.request);
+        } else {
+          // Anything else
+          console.log("error", err.message);
+        }
+      });
+  };
+
   return (
     <Fragment>
       <header className={styles.header}>
@@ -60,7 +86,7 @@ const Header = () => {
           <div className={styles['movie-choices']}>
             <button onClick={homepageHandler}>Most Popular</button>
             <button onClick={getTopRated}>Top Rated</button>
-            <button>Trending</button>
+            <button onClick={getTrending}>Trending</button>
           </div>
           <div className={styles.logout}>
                 <button onClick={logoutHandler}>Login / Logout</button>
