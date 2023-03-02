@@ -25,7 +25,7 @@ const MovieCard = ({ poster, title, movieId}) => {
           console.log('Client never received response')
           console.log(err.request)
       } else { 
-          console.log('error', err.message)
+          console.log('ERROR', err.message)
       }
       })
   };
