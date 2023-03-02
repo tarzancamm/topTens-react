@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const { PORT } = process.env || 4999;
 const { db } = require("./util/database");
-const {User, Movie} = require('./util/models')
+const {User, MovieList} = require('./util/models')
 
 
 // Store express in variable
@@ -12,17 +12,20 @@ const server = express();
 
 // Import middleware functions
 const {register, login} = require('./controllers/auth')
+const {addTopTen} = require('./controllers/topTen')
 
 // Middleware
 server.use(express.json()); // Parse all incoming requests into JSON
 server.use(cors()); // Client & Server can run on seperate ports
 
 // Table associations (relations)
-
+User.hasOne(MovieList)
+MovieList.belongsTo(User)
 
 // Endpoints
 server.post('/register', register)
 server.post('/login', login)
+server.post('/profile/:userId', addTopTen)
 
 // {force: true} within sync() to drop tables
 db.sync().then(() => {

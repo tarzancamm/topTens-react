@@ -26,16 +26,16 @@ module.exports = {
       type: DataTypes.STRING,
     },
   }),
-  Movie: db.define("movie", {
+  MovieList: db.define("movielist", {
     id: {
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true,
-      type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        autoIncrement: true,
+        type: DataTypes.INTEGER,
     },
-    movie_id: {
-      allowNull: false,
-      type: DataTypes.INTEGER,
-    },
-  }),
+    movieId: {
+        allowNull: false,
+        type: DataTypes.STRING,
+    }
+  })
 };

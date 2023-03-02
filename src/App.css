@@ -75,7 +75,7 @@ html {
 .home-page {
   background-color: #F8F3E4;
   background-repeat: repeat-y;
-  height: 2000px;
+  height: 2100px;
   width: 100vw;
   position: relative;
   top: 4rem;
@@ -92,7 +92,7 @@ html {
   display: flex;
   justify-content: space-between;
   margin: 0 8%;
-  top: 7%;
+  top: 9%;
 }
 
 .prevnext button {
@@ -119,7 +119,7 @@ html {
 .top-page {
   background-color: #F8F3E4;
   background-repeat: repeat-y;
-  height: 2000px;
+  height: 2100px;
   width: 100vw;
   position: relative;
   top: 4rem;
@@ -136,7 +136,7 @@ html {
 .trending-page {
     background-color: #F8F3E4;
     background-repeat: repeat-y;
-    height: 2000px;
+    height: 2100px;
     width: 100vw;
     position: relative;
     top: 4rem;

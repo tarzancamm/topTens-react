@@ -12,3 +12,25 @@
     text-align: center;
     margin-top: .8rem;
 }
+
+.movie-card button {
+    border: 1px solid #EE3024;
+    border-radius: 50%;
+    background: transparent;
+    font-size: 1rem;
+    color: #EE3024;
+}
+
+.movie-card button:hover {
+    color: #4D7298;
+    border: 1px solid #4D7298;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}

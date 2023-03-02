@@ -8,7 +8,7 @@ const MovieList = () => {
 
     const movieDisplay = movies.map((movie) => {
         return (
-        <MovieCard poster={movie.poster_path} title={movie.title} key={movie.id} />
+        <MovieCard poster={movie.poster_path} title={movie.title} key={movie.id} movieId={movie.id} />
         )
     })
 
