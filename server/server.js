@@ -12,7 +12,7 @@ const server = express();
 
 // Import middleware functions
 const {register, login} = require('./controllers/auth')
-const {addTopTen, getTopTen} = require('./controllers/topTen')
+const {addTopTen, getTopTen, deleteTopTen} = require('./controllers/topTen')
 
 // Middleware
 server.use(express.json()); // Parse all incoming requests into JSON
@@ -27,6 +27,7 @@ server.post('/register', register)
 server.post('/login', login)
 server.post('/profile/:userId', addTopTen)
 server.get('/profile/:userId', getTopTen)
+server.put('/profile/:userId', deleteTopTen)
 
 // {force: true} within sync() to drop tables
 db.sync().then(() => {

@@ -33,5 +33,19 @@ module.exports = {
             console.log(err)
             res.sendStatus(400)
         }
+    },
+
+    deleteTopTen: async (req, res) => {
+        try {
+            const {userId} = req.params
+            const {movieId} = req.body
+
+            await MovieList.destroy({where: {movieId: movieId.toString(), userId: userId}}) //Issue with movieId being sent. Add explicit type casts(?)
+            res.sendStatus(200)
+        } catch (err) {
+            console.log("Error deleting from top ten")
+            console.log(err)
+            res.sendStatus(400)
+        }
     }
 }
