@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let initialProfileState = {
-    topTenMovies: []
+    topTenMovies: [],
+    topTenDetails: []
 }
 
 const profileSlice = createSlice({
@@ -10,6 +11,9 @@ const profileSlice = createSlice({
     reducers: {
         topTen(state, action) {
             state.topTenMovies = action.payload
+        },
+        topDetails(state, action) {
+            state.topTenDetails = [...state.topTenDetails, action.payload]
         }
     }
 })

@@ -5,7 +5,6 @@ import MovieList from '../components/MovieList'
 import { useSelector, useDispatch } from "react-redux";
 import { movieActions } from "../store/redux slices/movie";
 import axios from 'axios'
-import { useNavigate } from "react-router-dom";
 
 const TopRatedScreen = () => {
   const dispatch = useDispatch();
@@ -17,7 +16,6 @@ const TopRatedScreen = () => {
         `https://api.themoviedb.org/3/movie/top_rated?api_key=ab914da83ff50db0baf3acd601780e5f&language=en-US&${page}`
       )
       .then((res) => {
-        console.log(res.data.results)
         dispatch(movieActions.topRated(res.data.results));
         window.scrollTo(0, 0)
       })
@@ -48,7 +46,6 @@ const TopRatedScreen = () => {
 
   useEffect(() => {
     getTopRated();
-    console.log(page);
   }, [page])
 
   return (

@@ -1,0 +1,41 @@
+.toptencard {
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2%;
+}
+
+.toptencard-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+}
+
+.toptencard img {
+    width: 100%;
+}
+
+.toptencard button {
+    border: 1px solid #EE3024;
+    border-radius: 50%;
+    background: transparent;
+    font-size: .7rem;
+    color: #EE3024;
+    height: 1.3rem;
+}
+
+.toptencard button:hover {
+    color: #4D7298;
+    border: 1px solid #4D7298;
+    cursor: pointer;
+}
+
+.ranking {
+    font-size: 1.5rem;
+    font-weight: bold;
+}

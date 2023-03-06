@@ -12,7 +12,7 @@ const server = express();
 
 // Import middleware functions
 const {register, login} = require('./controllers/auth')
-const {addTopTen} = require('./controllers/topTen')
+const {addTopTen, getTopTen} = require('./controllers/topTen')
 
 // Middleware
 server.use(express.json()); // Parse all incoming requests into JSON
@@ -26,6 +26,7 @@ MovieList.belongsTo(User)
 server.post('/register', register)
 server.post('/login', login)
 server.post('/profile/:userId', addTopTen)
+server.get('/profile/:userId', getTopTen)
 
 // {force: true} within sync() to drop tables
 db.sync().then(() => {

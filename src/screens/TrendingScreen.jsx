@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import axios from 'axios'
 import { movieActions } from "../store/redux slices/movie";
 import Header from "../components/Header";
@@ -16,7 +15,6 @@ const TrendingScreen = () => {
         `https://api.themoviedb.org/3/trending/movie/day?api_key=ab914da83ff50db0baf3acd601780e5f`
       )
       .then((res) => {
-        console.log(res.data.results);
         dispatch(movieActions.trending(res.data.results));
         window.scrollTo(0, 0)
       })

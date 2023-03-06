@@ -14,7 +14,6 @@ const HomeScreen = () => {
     axios
       .get(`https://api.themoviedb.org/3/movie/popular?api_key=ab914da83ff50db0baf3acd601780e5f&language=en-US&page=${page}`)
       .then((res) => {
-        console.log(res.data.results)
         dispatch(movieActions.popular(res.data.results))
         window.scrollTo(0, 0)
       })
@@ -45,7 +44,6 @@ const HomeScreen = () => {
 
   useEffect(() => {
     getPopular()
-    console.log(page)
   }, [page])
 
 

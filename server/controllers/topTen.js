@@ -1,5 +1,5 @@
 require('dotenv').config()
-const {Movie, MovieList} = require('../util/models')
+const {MovieList} = require('../util/models')
 
 module.exports = {
     addTopTen: async (req, res) => {
@@ -7,11 +7,29 @@ module.exports = {
             const {movieId} = req.body
             const {userId} = req.params
 
-            await MovieList.create({movieId, userId})
+            const findUserMovies = await MovieList.findAll({where: {userId: userId}})
+            if (findUserMovies.length >= 10) {
+                await MovieList.destroy({where: {movieId: findUserMovies[9].movieId}})
+                await MovieList.create({movieId, userId})
+            } else {
+                await MovieList.create({movieId, userId})
+            }
             
             res.sendStatus(200)
         } catch(err) {
             console.log("Error adding to top ten")
+            console.log(err)
+            res.sendStatus(400)
+        }
+    },
+
+    getTopTen: async (req, res) => {
+        try {
+            const {userId} = req.params
+            const topTen = await MovieList.findAll({where: {userId: userId}})
+            res.status(200).send(topTen)
+        } catch (err) {
+            console.log("Error retrieving top ten")
             console.log(err)
             res.sendStatus(400)
         }
